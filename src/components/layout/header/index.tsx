@@ -9,7 +9,7 @@ import logoImage from "../../../assets/4EC8EDB8-F0CD-47E8-B10C-2EF97B148582.png"
 import styles from "./Header.module.css";
 
 export const Header: FC = () => {
-  const { t, lang, toggleLang } = useLanguage();
+  const { t } = useLanguage();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -59,13 +59,13 @@ export const Header: FC = () => {
 
         {/* Actions */}
         <div className={styles.actions}>
-          <button
+          {/* <button
             className={styles.langToggle}
             onClick={toggleLang}
             aria-label={`Switch to ${lang === "am" ? "English" : "Armenian"}`}
           >
             {lang === "am" ? "EN" : "ՀՅ"}
-          </button>
+          </button> */}
           <Link to={ROUTES.CONTACT} className={styles.ctaBtn}>
             {t("nav.cta")}
           </Link>
