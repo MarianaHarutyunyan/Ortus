@@ -1,0 +1,14 @@
+export const COLORS = {
+  PRIMARY: "#13294B",
+  ACCENT: "#C27B4F",
+  BG: "#F8F5F1",
+  SAND: "#D6B98C",
+  OLIVE: "#7A8D6A",
+  TEXT_HEADING: "#13294B",
+  TEXT_BODY: "#4B5563",
+  TEXT_MUTED: "#6B7280",
+  WHITE: "#FFFFFF",
+  BORDER: "#E5DDD4",
+  BG_CARD: "#FFFFFF",
+  BG_SECTION: "#F2EDE6",
+} as const;

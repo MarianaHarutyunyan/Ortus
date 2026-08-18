@@ -1,0 +1,59 @@
+:root {
+  --color-primary: #13294B;
+  --color-accent: #C27B4F;
+  --color-bg: #F8F5F1;
+  --color-sand: #D6B98C;
+  --color-olive: #7A8D6A;
+  --color-text-heading: #13294B;
+  --color-text-body: #4B5563;
+  --color-text-muted: #6B7280;
+  --color-white: #FFFFFF;
+  --color-border: #E5DDD4;
+  --color-bg-card: #FFFFFF;
+  --color-bg-section: #F2EDE6;
+
+  --font-heading: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', 'Manrope', system-ui, sans-serif;
+
+  --ratio: 1.618;
+
+  --radius-sm: 8px;
+  --radius-md: 13px;
+  --radius-lg: 21px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 2px 8px rgba(19, 41, 75, 0.08);
+  --shadow-md: 0 4px 20px rgba(19, 41, 75, 0.12);
+  --shadow-lg: 0 8px 40px rgba(19, 41, 75, 0.16);
+
+  --transition: 200ms ease;
+  --transition-slow: 400ms ease;
+
+  --container-max: 1200px;
+  --container-padding: 24px;
+
+  --header-height: 89px;
+
+  /* Fibonacci sequence approximates the golden ratio (1.618) and gives a
+     harmonious, Google-Material-like spacing rhythm. */
+  --spacing-3xs: 3px;
+  --spacing-2xs: 5px;
+  --spacing-xs: 8px;
+  --spacing-sm: 13px;
+  --spacing-md: 21px;
+  --spacing-lg: 34px;
+  --spacing-xl: 55px;
+  --spacing-2xl: 89px;
+  --spacing-3xl: 144px;
+
+  /* Type scale generated from a 1rem base multiplied/divided by the golden
+     ratio, mirroring the proportions of the spacing scale above. */
+  --font-2xs: 0.75rem;
+  --font-xs: 0.875rem;
+  --font-sm: 1rem;
+  --font-md: 1.125rem;
+  --font-lg: 1.618rem;
+  --font-xl: 2.058rem;
+  --font-2xl: 2.618rem;
+  --font-3xl: 4.236rem;
+}

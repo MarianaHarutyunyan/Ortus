@@ -1,0 +1,216 @@
+.articlePage {
+  padding: 45px;
+  background-color: var(--color-bg);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: var(--font-xs);
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: var(--spacing-lg);
+  transition: gap var(--transition);
+}
+
+.backLink:hover {
+  gap: var(--spacing-sm);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(var(--font-xl), 3vw, var(--font-2xl));
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin: 0 0 var(--spacing-md);
+  text-align: center;
+}
+
+.excerpt {
+  font-size: var(--font-md);
+  color: var(--color-text-body);
+  line-height: 1.7;
+  white-space: pre-wrap;
+  margin: 0 0 var(--spacing-md);
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--color-border);
+  margin: var(--spacing-lg) 0;
+}
+
+.content {
+  font-size: var(--font-sm);
+  line-height: 1.9;
+  color: var(--color-text-body);
+  white-space: pre-wrap;
+}
+
+/* ──────────────────────────────────────────────────────────── */
+/* SECTIONS ACCORDION (multi-part articles) */
+/* ──────────────────────────────────────────────────────────── */
+
+.sectionsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.sectionItem {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  overflow: hidden;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.sectionItemOpen {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.sectionHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body);
+}
+
+.sectionNumber {
+  font-family: var(--font-heading);
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--color-accent);
+  min-width: 32px;
+  flex-shrink: 0;
+}
+
+.sectionTitle {
+  flex: 1;
+  font-family: var(--font-heading);
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.4;
+}
+
+.sectionChevron {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+  transition: transform var(--transition);
+}
+
+.sectionItemOpen .sectionChevron {
+  transform: rotate(180deg);
+  color: var(--color-accent);
+}
+
+.sectionContentWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--transition-slow);
+}
+
+.sectionItemOpen .sectionContentWrapper {
+  grid-template-rows: 1fr;
+}
+
+.sectionContentInner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.sectionContent {
+  margin: 0;
+  padding: 0 var(--spacing-lg) var(--spacing-lg);
+  font-size: var(--font-sm);
+  line-height: 1.8;
+  color: var(--color-text-body);
+  white-space: pre-wrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sectionContentWrapper,
+  .sectionChevron,
+  .sectionItem {
+    transition: none !important;
+  }
+}
+
+.articleNav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.navLink:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.navNext {
+  grid-column: 2;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.navLabel {
+  display: block;
+  font-size: var(--font-2xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.navTitle {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: var(--font-xs);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+@media (max-width: 640px) {
+  .articleNav {
+    grid-template-columns: 1fr;
+  }
+
+  .navNext {
+    grid-column: 1;
+  }
+}

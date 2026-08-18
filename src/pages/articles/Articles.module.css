@@ -1,0 +1,50 @@
+/* Page Header */
+.pageHeader {
+  padding: 40px;
+  background: linear-gradient(135deg, #f0ebe3 0%, var(--color-bg) 80%);
+}
+
+.pageHeader :global(.container) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-align: center;
+}
+
+.pageHeading {
+  font-family: var(--font-heading);
+  font-size: 45px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: var(--spacing-sm);
+  line-height: 1.15;
+}
+
+.pageSubheading {
+  font-size: var(--font-sm);
+  color: var(--color-text-body);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.articlesSection {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-bg);
+}
+
+.cardBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+  font-size: var(--font-2xs);
+  font-weight: 600;
+  color: var(--color-accent);
+  background-color: rgba(194, 123, 79, 0.1);
+  padding: var(--spacing-3xs) var(--spacing-sm);
+  border-radius: var(--radius-full);
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: var(--spacing-3xs);
+}
