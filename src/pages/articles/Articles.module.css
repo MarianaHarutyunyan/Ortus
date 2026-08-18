@@ -1,6 +1,6 @@
 /* Page Header */
 .pageHeader {
-  padding: 40px;
+  padding: 40px 24px;
   background: linear-gradient(135deg, #f0ebe3 0%, var(--color-bg) 80%);
 }
 
@@ -14,7 +14,7 @@
 
 .pageHeading {
   font-family: var(--font-heading);
-  font-size: 45px;
+  font-size: clamp(2rem, 6vw, 45px);
   font-weight: 700;
   color: var(--color-primary);
   margin-top: var(--spacing-sm);

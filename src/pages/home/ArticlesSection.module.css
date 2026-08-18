@@ -110,6 +110,7 @@
   padding: 0;
   overflow: hidden;
   gap: 0;
+  min-width: 0;
 }
 
 .cardImage {
@@ -130,7 +131,7 @@
 
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--spacing-md);
 }
 
@@ -232,7 +233,7 @@
 
 @media (max-width: 900px) {
   .cardsGrid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 

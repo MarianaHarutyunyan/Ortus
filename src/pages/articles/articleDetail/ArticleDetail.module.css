@@ -1,5 +1,5 @@
 .articlePage {
-  padding: 45px;
+  padding: 45px 24px;
   background-color: var(--color-bg);
 }
 
@@ -106,11 +106,14 @@
 
 .sectionTitle {
   flex: 1;
+  min-width: 0;
   font-family: var(--font-heading);
   font-size: var(--font-md);
   font-weight: 600;
   color: var(--color-primary);
   line-height: 1.4;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .sectionChevron {
@@ -158,7 +161,7 @@
 
 .articleNav {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: var(--spacing-md);
 }
 
@@ -173,6 +176,12 @@
   color: var(--color-primary);
   text-decoration: none;
   transition: all var(--transition);
+  min-width: 0;
+}
+
+.navLink > span {
+  min-width: 0;
+  overflow: hidden;
 }
 
 .navLink:hover {
@@ -212,5 +221,24 @@
 
   .navNext {
     grid-column: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .articlePage {
+    padding: 28px 16px;
+  }
+
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .sectionHeader {
+    padding: var(--spacing-sm) var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+
+  .sectionContent {
+    padding: 0 var(--spacing-md) var(--spacing-md);
   }
 }
