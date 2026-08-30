@@ -247,6 +247,29 @@ a.infoValue:hover {
     grid-template-columns: 1fr;
     gap: var(--spacing-sm);
   }
+
+  .pageHeading {
+    font-size: clamp(1.6rem, 7vw, 32px);
+    margin-top: 0;
+  }
+
+  .pageSubheading {
+    font-size: var(--font-xs);
+    line-height: 1.6;
+  }
+
+  .mainSection {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .infoCard {
+    padding: var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+
+  .mapPlaceholder {
+    height: 200px;
+  }
 }
 
 @media (max-width: 600px) {

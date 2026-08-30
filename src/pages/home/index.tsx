@@ -42,6 +42,7 @@ export const Home: FC = () => {
   const [openDirections, setOpenDirections] = useState<
     Record<"premium" | "open", boolean>
   >({ premium: false, open: false });
+  const [aboutOpen, setAboutOpen] = useState(false);
 
   const scrollValues = (dir: "left" | "right") => {
     const el = valuesScrollRef.current;
@@ -57,9 +58,17 @@ export const Home: FC = () => {
     <main>
       {/* ── HERO ── */}
       <section className={styles.hero}>
+        <img
+          src={heroImage}
+          alt="ORTUS students"
+          className={styles.heroBg}
+        />
+        <div className={styles.heroOverlay} />
+
         <div className={["container", styles.heroInner].join(" ")}>
-          {/* Left: text */}
           <div className={styles.heroContent}>
+            <span className={styles.heroEyebrow}>{t("site.tagline")}</span>
+
             <h1 className={styles.heroHeading}>
               <span>{t("hero.heading.line1")}</span>
               <em className={styles.heroAccent}>{t("hero.heading.line2")}</em>
@@ -68,41 +77,40 @@ export const Home: FC = () => {
             <p className={styles.heroSubheading}>{t("hero.subheading")}</p>
 
             <div className={styles.heroCtas}>
-              <Link to={ROUTES.COURSES} className={styles.btnPrimary}>
+              <button
+                type="button"
+                className={styles.btnPrimary}
+                onClick={() => setAboutOpen((o) => !o)}
+                aria-expanded={aboutOpen}
+              >
                 {t("hero.cta.primary")}
-                <ArrowRight size={18} />
-              </Link>
+                <ArrowRight
+                  size={14}
+                  className={[
+                    styles.heroCtaIcon,
+                    aboutOpen ? styles.heroCtaIconOpen : "",
+                  ].join(" ")}
+                />
+              </button>
             </div>
-          </div>
 
-          {/* Right: babies image */}
-          <div className={styles.heroImageWrap}>
-            <img
-              src={heroImage}
-              alt="ORTUS students"
-              className={styles.heroImage}
-            />
-            <div className={styles.heroImageGradient} />
-            <div className={styles.heroImageRibbon}>
-              <span>{t("hero.image.word1")}</span>
-              <span className={styles.heroRibbonDot}>•</span>
-              <span>{t("hero.image.word2")}</span>
-              <span className={styles.heroRibbonDot}>•</span>
-              <span>{t("hero.image.word3")}</span>
-            </div>
+            {aboutOpen && (
+              <p className={styles.heroSecondText}>{t("values.subheading")}</p>
+            )}
           </div>
+        </div>
+
+        <div className={styles.heroRibbon}>
+          <span>{t("hero.image.word1")}</span>
+          <span className={styles.heroRibbonDot}>•</span>
+          <span>{t("hero.image.word2")}</span>
+          <span className={styles.heroRibbonDot}>•</span>
+          <span>{t("hero.image.word3")}</span>
         </div>
       </section>
 
       {/* ── VALUES ── */}
       <section className={styles.values}>
-        <div className="container">
-          <div className={styles.valuesMeta}>
-            <h2 className={styles.valuesHeading}>{t("values.heading")}</h2>
-            <p className={styles.valuesSubheading}>{t("values.subheading")}</p>
-          </div>
-        </div>
-
         <div className={styles.valuesScrollWrap}>
           <button
             className={[styles.valuesArrow, styles.valuesArrowLeft].join(" ")}
@@ -212,15 +220,12 @@ export const Home: FC = () => {
                   styles.directionIconAccent,
                 ].join(" ")}
               >
-                <Users size={28} />
+                <Users size={22} />
               </div>
               <div className={styles.directionCardBody}>
                 <h3 className={styles.directionTitle}>
-                  {t("directions.premium.title")}
-                </h3>
-                <p className={styles.directionSubtitle}>
                   {t("directions.premium.subtitle")}
-                </p>
+                </h3>
                 <ul className={styles.directionList}>
                   {(["bullet1", "bullet2", "bullet3"] as const).map((b) => (
                     <li key={b}>{t(`directions.premium.${b}`)}</li>
@@ -259,15 +264,12 @@ export const Home: FC = () => {
                   styles.directionIconGreen,
                 ].join(" ")}
               >
-                <Users size={28} />
+                <Users size={22} />
               </div>
               <div className={styles.directionCardBody}>
                 <h3 className={styles.directionTitle}>
-                  {t("directions.open.title")}
-                </h3>
-                <p className={styles.directionSubtitle}>
                   {t("directions.open.subtitle")}
-                </p>
+                </h3>
                 <ul className={styles.directionList}>
                   {(["bullet1", "bullet2", "bullet3"] as const).map((b) => (
                     <li key={b}>{t(`directions.open.${b}`)}</li>

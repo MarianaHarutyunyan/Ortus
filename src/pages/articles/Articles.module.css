@@ -48,3 +48,29 @@
   letter-spacing: 0.03em;
   margin-bottom: var(--spacing-3xs);
 }
+
+@media (max-width: 768px) {
+  .pageHeader {
+    padding: 24px 16px;
+  }
+
+  .pageHeading {
+    font-size: clamp(1.6rem, 7vw, 32px);
+    margin-top: 0;
+  }
+
+  .pageSubheading {
+    font-size: var(--font-xs);
+    line-height: 1.6;
+  }
+
+  .articlesSection {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .cardBadge {
+    padding: 2px var(--spacing-xs);
+    letter-spacing: 0.02em;
+    margin-bottom: 0;
+  }
+}

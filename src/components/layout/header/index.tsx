@@ -1,6 +1,6 @@
 import { useState, useEffect, type FC } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Mail, Globe } from "lucide-react";
 import { useLanguage } from "../../../context/LanguageContext";
 import { NAVIGATION } from "../../../constants/navigation";
 import { ROUTES } from "../../../constants/routes";
@@ -9,7 +9,7 @@ import logoImage from "../../../assets/4EC8EDB8-F0CD-47E8-B10C-2EF97B148582.png"
 import styles from "./Header.module.css";
 
 export const Header: FC = () => {
-  const { t } = useLanguage();
+  const { t, lang, toggleLang } = useLanguage();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -59,15 +59,21 @@ export const Header: FC = () => {
 
         {/* Actions */}
         <div className={styles.actions}>
-          {/* <button
+          <button
             className={styles.langToggle}
             onClick={toggleLang}
             aria-label={`Switch to ${lang === "am" ? "English" : "Armenian"}`}
           >
-            {lang === "am" ? "EN" : "ՀՅ"}
-          </button> */}
-          <Link to={ROUTES.CONTACT} className={styles.ctaBtn}>
-            {t("nav.cta")}
+            <Globe size={15} />
+            <span>{lang === "am" ? "EN" : "ՀՅ"}</span>
+          </button>
+          <Link
+            to={ROUTES.CONTACT}
+            className={styles.ctaBtn}
+            aria-label={t("nav.cta")}
+          >
+            <Mail size={15} />
+            <span className={styles.ctaBtnLabel}>{t("nav.cta")}</span>
           </Link>
           <button
             className={styles.menuBtn}
@@ -96,9 +102,6 @@ export const Header: FC = () => {
                 {t(item.labelKey)}
               </Link>
             ))}
-            <Link to={ROUTES.CONTACT} className={styles.mobileCta}>
-              {t("nav.cta")}
-            </Link>
           </nav>
         </div>
       )}

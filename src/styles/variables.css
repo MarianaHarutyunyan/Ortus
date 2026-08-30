@@ -12,8 +12,9 @@
   --color-bg-card: #FFFFFF;
   --color-bg-section: #F2EDE6;
 
-  --font-heading: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', 'Manrope', system-ui, sans-serif;
+  --font-heading: 'Noto Sans Armenian', sans-serif;
+  --font-body: 'Noto Sans Armenian', sans-serif;
+  --font-decorative: 'Arek Armenian', serif;
 
   --ratio: 1.618;
 

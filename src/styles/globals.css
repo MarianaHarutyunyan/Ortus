@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arek+Armenian:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans+Armenian:wght@400;500;600;700&display=swap');
 
 @import './reset.css';
 @import './variables.css';
@@ -31,6 +31,13 @@ h6 { font-size: var(--font-sm); }
   padding: 0 var(--container-padding);
 }
 
+/* Decorative accent type — use sparingly for expressive phrases */
+.decorative {
+  font-family: var(--font-decorative);
+  font-style: italic;
+  font-weight: 400;
+}
+
 .section {
   padding: var(--spacing-3xl) 0;
 }
@@ -41,6 +48,46 @@ h6 { font-size: var(--font-sm); }
 
 .section-lg {
   padding: calc(var(--spacing-3xl) * var(--ratio)) 0;
+}
+
+/* ──────────────────────────────────────────────────────────── */
+/* MOBILE: tighter type scale, spacing and chrome                */
+/* ──────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --font-2xs: 0.6875rem; /* 11px */
+    --font-xs: 0.75rem;    /* 12px */
+    --font-sm: 0.8125rem;  /* 13px */
+    --font-md: 0.9375rem;  /* 15px */
+    --font-lg: 1.1875rem;  /* 19px */
+    --font-xl: 1.5rem;     /* 24px */
+    --font-2xl: 1.875rem;  /* 30px */
+    --font-3xl: 2.375rem;  /* 38px */
+
+    --container-padding: 16px;
+    --header-height: 62px;
+
+    --spacing-lg: 24px;
+    --spacing-xl: 36px;
+    --spacing-2xl: 52px;
+    --spacing-3xl: 72px;
+  }
+
+  body {
+    font-size: var(--font-sm);
+    line-height: 1.55;
+  }
+
+  h1 { font-size: var(--font-2xl); }
+  h2 { font-size: var(--font-xl); }
+  h3 { font-size: var(--font-lg); }
+  h4 { font-size: var(--font-md); }
+  h5 { font-size: var(--font-sm); }
+  h6 { font-size: var(--font-xs); }
+
+  .section { padding: var(--spacing-2xl) 0; }
+  .section-sm { padding: var(--spacing-xl) 0; }
+  .section-lg { padding: var(--spacing-2xl) 0; }
 }
 
 ::selection {

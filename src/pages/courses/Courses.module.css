@@ -257,6 +257,27 @@
   }
 }
 
+@media (max-width: 768px) {
+  .pageHeader {
+    padding: 32px 0;
+  }
+
+  .pageHeading {
+    font-size: clamp(1.6rem, 7vw, 32px);
+    margin-top: 0;
+  }
+
+  .pageSubheading {
+    font-size: var(--font-xs);
+    line-height: 1.6;
+  }
+
+  .coursesSection,
+  .cta {
+    padding: var(--spacing-lg) 0;
+  }
+}
+
 @media (max-width: 560px) {
   .coursesGrid {
     grid-template-columns: 1fr;

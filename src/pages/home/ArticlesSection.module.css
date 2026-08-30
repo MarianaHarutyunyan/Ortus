@@ -242,17 +242,57 @@
     padding: var(--spacing-xl) 0;
   }
 
+  .articlesMeta {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  /* Two compact cards per row */
   .cardsGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--spacing-sm);
   }
 
-  .cardContent {
-    padding: var(--spacing-md);
+  .card {
+    border-radius: var(--radius-md);
   }
 
+  .cardImage {
+    height: 108px;
+  }
+
+  .cardContent {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-xs);
+  }
+
+  .cardBody {
+    gap: var(--spacing-2xs);
+  }
+
+  .cardTitle {
+    font-size: var(--font-sm);
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .cardExcerpt {
+    font-size: var(--font-2xs);
+    -webkit-line-clamp: 2;
+  }
+
+  .card .cardLink {
+    font-size: var(--font-2xs);
+  }
+
+  /* Featured collapses to a single compact card */
   .featuredCard {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+    border-radius: var(--radius-md);
   }
 
   .featuredImage,
@@ -262,6 +302,33 @@
 
   .featuredCard .cardBody {
     max-width: 100%;
+    gap: var(--spacing-2xs);
+  }
+
+  .featuredTitle {
+    font-size: var(--font-lg);
+  }
+
+  .featuredExcerpt {
+    font-size: var(--font-xs);
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .viewAllWrap {
+    margin-top: var(--spacing-lg);
+  }
+
+  .viewAllBtn {
+    font-size: var(--font-xs);
+  }
+}
+
+@media (max-width: 360px) {
+  .cardImage {
+    height: 92px;
   }
 }
 
