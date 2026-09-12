@@ -16,10 +16,10 @@ export type AgeGroup = {
 
 export const COURSES: Course[] = [
   {
-    key: "narek",
-    icon: ScrollText,
-    color: "#13294B",
-    bg: "rgba(19, 41, 75, 0.06)",
+    key: "finance",
+    icon: Coins,
+    color: "#C27B4F",
+    bg: "rgba(194, 123, 79, 0.08)",
     itemCount: 4,
   },
   {
@@ -37,10 +37,10 @@ export const COURSES: Course[] = [
     itemCount: 3,
   },
   {
-    key: "finance",
-    icon: Coins,
-    color: "#C27B4F",
-    bg: "rgba(194, 123, 79, 0.08)",
+    key: "narek",
+    icon: ScrollText,
+    color: "#13294B",
+    bg: "rgba(19, 41, 75, 0.06)",
     itemCount: 4,
   },
 ];

@@ -1,6 +1,8 @@
 import { type FC } from "react";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Send, Clock } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
+import { InstagramIcon } from "../../components/ui/icons/InstagramIcon";
+import { TELEGRAM_URL, INSTAGRAM_URL } from "../../constants/social";
 import styles from "./Contact.module.css";
 
 // interface FormData {
@@ -18,16 +20,16 @@ const CONTACT_ITEMS = [
     href: null,
   },
   {
-    icon: Phone,
-    labelKey: "contact.info.phone.label",
-    valueKey: "contact.info.phone.value",
-    href: "tel:",
+    icon: Send,
+    labelKey: "contact.info.telegram.label",
+    valueKey: "contact.info.telegram.value",
+    href: TELEGRAM_URL,
   },
   {
-    icon: Mail,
-    labelKey: "contact.info.email.label",
-    valueKey: "contact.info.email.value",
-    href: "mailto:",
+    icon: InstagramIcon,
+    labelKey: "contact.info.instagram.label",
+    valueKey: "contact.info.instagram.value",
+    href: INSTAGRAM_URL,
   },
   {
     icon: Clock,
@@ -78,7 +80,6 @@ export const Contact: FC = () => {
           <div className={styles.infoCards}>
             {CONTACT_ITEMS.map(({ icon: Icon, labelKey, valueKey, href }) => {
               const value = t(valueKey);
-              const fullHref = href ? `${href}${value}` : undefined;
               return (
                 <div key={labelKey} className={styles.infoCard}>
                   <div className={styles.infoIcon}>
@@ -86,8 +87,13 @@ export const Contact: FC = () => {
                   </div>
                   <div className={styles.infoText}>
                     <span className={styles.infoLabel}>{t(labelKey)}</span>
-                    {fullHref ? (
-                      <a href={fullHref} className={styles.infoValue}>
+                    {href ? (
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.infoValue}
+                      >
                         {value}
                       </a>
                     ) : (

@@ -30,10 +30,10 @@ const VALUES = [
 ];
 
 const COURSE_PREVIEWS = [
-  { key: "narek", icon: ScrollText, color: "#13294B", itemCount: 4 },
+  { key: "finance", icon: Coins, color: "#C27B4F", itemCount: 4 },
   { key: "body", icon: Activity, color: "#7A8D6A", itemCount: 3 },
   { key: "emotional", icon: Sparkles, color: "#D6B98C", itemCount: 3 },
-  { key: "finance", icon: Coins, color: "#C27B4F", itemCount: 4 },
+  { key: "narek", icon: ScrollText, color: "#13294B", itemCount: 4 },
 ];
 
 export const Home: FC = () => {
@@ -58,11 +58,7 @@ export const Home: FC = () => {
     <main>
       {/* ── HERO ── */}
       <section className={styles.hero}>
-        <img
-          src={heroImage}
-          alt="ORTUS students"
-          className={styles.heroBg}
-        />
+        <img src={heroImage} alt="ORTUS students" className={styles.heroBg} />
         <div className={styles.heroOverlay} />
 
         <div className={["container", styles.heroInner].join(" ")}>

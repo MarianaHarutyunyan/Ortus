@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import { Send } from "lucide-react";
 import { useLanguage } from "../../../context/LanguageContext";
 import { NAVIGATION } from "../../../constants/navigation";
 import { SITE_NAME } from "../../../constants/site";
+import { TELEGRAM_URL, INSTAGRAM_URL } from "../../../constants/social";
+import { InstagramIcon } from "../../ui/icons/InstagramIcon";
 import logoImage from "../../../assets/footer-logo.png";
 import styles from "./Footer.module.css";
 import type { FC } from "react";
@@ -35,32 +38,22 @@ export const Footer: FC = () => {
           </nav>
           <div className={styles.social}>
             <a
-              href="https://instagram.com"
+              href={TELEGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+              aria-label="Telegram"
+            >
+              <Send size={16} />
+            </a>
+            <a
+              href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
               aria-label="Instagram"
             >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.75"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                <circle cx="12" cy="12" r="3.5" />
-                <circle
-                  cx="17.5"
-                  cy="6.5"
-                  r="0.5"
-                  fill="currentColor"
-                  stroke="none"
-                />
-              </svg>
+              <InstagramIcon size={18} />
             </a>
           </div>
         </div>
@@ -71,24 +64,28 @@ export const Footer: FC = () => {
           <div className={styles.contactList}>
             <div className={styles.contactItem}>
               <span className={styles.contactLabel}>
-                {t("contact.info.email.label")}
+                {t("contact.info.telegram.label")}
               </span>
               <a
-                href={`mailto:${t("contact.info.email.value")}`}
+                href={TELEGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.footerLink}
               >
-                {t("contact.info.email.value")}
+                {t("contact.info.telegram.value")}
               </a>
             </div>
             <div className={styles.contactItem}>
               <span className={styles.contactLabel}>
-                {t("contact.info.phone.label")}
+                {t("contact.info.instagram.label")}
               </span>
               <a
-                href={`tel:${t("contact.info.phone.value")}`}
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.footerLink}
               >
-                {t("contact.info.phone.value")}
+                {t("contact.info.instagram.value")}
               </a>
             </div>
             <div className={styles.contactItem}>

@@ -176,10 +176,10 @@ export const am: Record<string, string> = {
   // Contact info
   "contact.info.address.label": "Հասցե",
   "contact.info.address.value": "Երևան, Հայաստան",
-  "contact.info.phone.label": "Հեռախոս",
-  "contact.info.phone.value": "+374 10 000 000",
-  "contact.info.email.label": "Էլ. փոստ",
-  "contact.info.email.value": "info@ortus.am",
+  "contact.info.telegram.label": "Տելեգրամ",
+  "contact.info.telegram.value": "@ortus_education",
+  "contact.info.instagram.label": "Ինստագրամ",
+  "contact.info.instagram.value": "@ortus_education_",
   "contact.info.hours.label": "Աշխատանքային ժամեր",
   "contact.info.hours.value": "Երկուշաբթի–ուրբաթ 9:00–18:00",
 

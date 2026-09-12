@@ -11,13 +11,18 @@ import {
 import cardStyles from "../home/ArticlesSection.module.css";
 import styles from "./Articles.module.css";
 
-const [FEATURED_ARTICLE, ...REMAINING_ARTICLES] = ARTICLES;
+const [FEATURED_ARTICLE, ...REST_ARTICLES] = ARTICLES;
+const LAST_ARTICLE = REST_ARTICLES[REST_ARTICLES.length - 1];
+const REMAINING_ARTICLES = REST_ARTICLES.slice(0, -1);
 
 export const Articles: FC = () => {
   const { t } = useLanguage();
 
   const renderBadge = (item: Article) => {
-    const sectionsCount = "sections" in item ? item.sections?.length : 0;
+    const sectionsCount =
+      "sections" in item && Array.isArray(item.sections)
+        ? item.sections.length
+        : 0;
     if (!sectionsCount) return null;
     return (
       <span className={styles.cardBadge}>
@@ -95,6 +100,42 @@ export const Articles: FC = () => {
               </Link>
             ))}
           </div>
+
+          {LAST_ARTICLE && (
+            <Link
+              to={articleDetailPath(LAST_ARTICLE.slug)}
+              className={[
+                cardStyles.featuredCard,
+                styles.secondaryFeaturedCard,
+              ].join(" ")}
+            >
+              {ARTICLE_CARD_IMAGES[LAST_ARTICLE.slug] && (
+                <img
+                  src={ARTICLE_CARD_IMAGES[LAST_ARTICLE.slug]}
+                  alt=""
+                  className={[
+                    cardStyles.featuredImage,
+                    styles.secondaryFeaturedImage,
+                  ].join(" ")}
+                  aria-hidden="true"
+                />
+              )}
+              <div className={cardStyles.featuredGradient} />
+              <div className={cardStyles.cardBody}>
+                {renderBadge(LAST_ARTICLE)}
+                <h3 className={cardStyles.featuredTitle}>
+                  {LAST_ARTICLE.titleAm}
+                </h3>
+                <p className={cardStyles.featuredExcerpt}>
+                  {LAST_ARTICLE.excerptAm}
+                </p>
+              </div>
+              <span className={cardStyles.cardLink}>
+                {t("articles.readArticle")}
+                <ArrowRight size={15} />
+              </span>
+            </Link>
+          )}
         </div>
       </section>
     </main>

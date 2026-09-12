@@ -33,6 +33,22 @@
   background-color: var(--color-bg);
 }
 
+.secondaryFeaturedCard {
+  margin-top: var(--spacing-md);
+  margin-bottom: 0;
+}
+
+.secondaryFeaturedImage {
+  object-fit: cover;
+  object-position: center 39%;
+}
+
+@media (max-width: 768px) {
+  .secondaryFeaturedCard {
+    margin-top: var(--spacing-sm);
+  }
+}
+
 .cardBadge {
   display: inline-flex;
   align-items: center;
