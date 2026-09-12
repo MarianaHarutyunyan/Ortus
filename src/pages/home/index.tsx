@@ -63,8 +63,6 @@ export const Home: FC = () => {
 
         <div className={["container", styles.heroInner].join(" ")}>
           <div className={styles.heroContent}>
-            <span className={styles.heroEyebrow}>{t("site.tagline")}</span>
-
             <h1 className={styles.heroHeading}>
               <span>{t("hero.heading.line1")}</span>
               <em className={styles.heroAccent}>{t("hero.heading.line2")}</em>

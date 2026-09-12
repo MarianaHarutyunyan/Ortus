@@ -7,16 +7,12 @@ export const en: Record<string, string> = {
   "nav.contact": "Contact Us",
   "nav.cta": "Get in Touch",
 
-  // Site
-  "site.tagline": "Education that begins with the person",
-
   // Hero section
   "hero.image.word1": "Harmony",
   "hero.image.word2": "Balance",
   "hero.image.word3": "Real Values",
-  "hero.heading.line1": "Education",
-  "hero.heading.line2": "that begins",
-  "hero.heading.line3": "with the person",
+  "hero.heading.line1": "Every great change",
+  "hero.heading.line2": "begins from within",
   "hero.subheading":
     "ORTUS is an Armenian educational platform where children learn to think, create, and discover the world with curiosity and confidence.",
   "hero.cta.primary": "Explore Courses",
